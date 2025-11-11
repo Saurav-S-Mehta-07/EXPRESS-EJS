@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const data = require("./data.json");
 
 let Port = 3000;
 
@@ -12,8 +13,9 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/insta/:username",(req,res)=>{
-    let {username} = req.params;
-    res.render("insta",{username});
+    let {username}= req.params;
+    let User = data[username];
+    res.render("insta",{User});
 })
 
 // app.use((req, res)=>{

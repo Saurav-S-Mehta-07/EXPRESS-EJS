@@ -6,8 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        welcome Mr./Mrs. : <%= username %>
-    </h1>
+    <h1><%= User.name%></h1>
+    <h1><%= User.followers%></h1>
+    <h1><%= User.following%></h1>
+
+    <%for(let post of User.posts){%>
+        <img src="<%=post.image%>" alt=""style="height:200px; width:200px; display: flex">
+        <h3>likes: <%=post.likes%> comments: <%=post.comments%></h3>
+    <%}%>
+
 </body>
 </html>
