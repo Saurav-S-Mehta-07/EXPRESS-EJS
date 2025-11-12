@@ -1,7 +1,17 @@
 <%- include('includes/header') %>
 
 <body>
-    <h1>Post by @<%= %></h1>
-    <h3>content: <%= %></h3>
+
+    <div class="container">
+       <div class="post">
+           <a href="/posts">((--back to home</a>
+           <h1>@<%=post.username%></h1>
+           <p><%=post.description%></p>
+           <form action="/posts/editpost/<%=post.id%>" method="get"><button>edit</button></form>
+                   <br>
+           <form action="/posts/<%=post.id%>?_method=delete" method="post"><button>delete</button></form>
+       </div>
+    </div>
+       
 </body>
 </html>

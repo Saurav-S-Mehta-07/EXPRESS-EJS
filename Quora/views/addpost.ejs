@@ -1,11 +1,15 @@
 <%- include('includes/header') %>
 
 <body>
-    <h1>Add new post!</h1>
-    <form action="/" method="post">
-        <input type="text" placeholder="enter username" name="username" required><br><br>
-        <input type="text" placeholder="discription" name="description" required><br><br>
-        <button type="submit">Add Post</button>
-    </form>
+  <div class="container">  
+      <div class="forms"> 
+         <h1 id="heading">Add new post!</h1>
+         <form action="/posts" method="post">
+             <input type="text" placeholder="enter username" name="username" required><br><br>
+             <input type="text" placeholder="discription" name="description" required><br><br>
+             <button type="submit">Add Post</button>
+         </form>
+       </div>
+  </div>
 </body>
 </html>

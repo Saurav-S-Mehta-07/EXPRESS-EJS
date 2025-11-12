@@ -3,6 +3,44 @@
     color: purple;
 }
 
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
 .post{
+    background-color: wheat;
+    width: 30%;
+    margin: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 20px;
+}
+
+
+.show-more{
+    opacity: 0.7;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(222, 222, 222, 0.6);
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 50%;
+    width: 50%;
     background-color: wheat;
 }

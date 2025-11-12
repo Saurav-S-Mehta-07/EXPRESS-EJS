@@ -1,6 +1,20 @@
 <%- include('includes/header') %>
 
 <body>
-    
+    <div class="container">
+       <div class="forms">
+          <h1 id="heading">Edit post</h1>
+      
+          <form action="/posts/editpost/<%=post.id%>?_method=patch" method="post">
+              <label for="">Username</label>
+              <input type="text" value="<%=post.username%>" name="username">
+              <br><br>
+              <label for="">Content</label>
+              <textarea type="text"  name="description" rows="5" cols="50"><%=post.description%></textarea>
+              <br><br>
+              <button>Update</button>
+          </form>
+       </div>
+    </div>
 </body>
 </html>
