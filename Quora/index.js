@@ -19,19 +19,6 @@ app.get("/posts",(req,res)=>{
     res.render("index",{posts});
 });
 
-app.patch("/posts/editpost/:id",(req,res)=>{
-    let {id} = req.params;
-    let {username, description} = req.body;
-    let post = posts.find((a)=>a.id === id);
-    if(!id || !post){
-        res.render("error");
-        return;
-    }
-    post.username = username;
-    post.description = description;
-    post.id = id;
-    res.redirect(`/posts/show/${id}`);
-})
 
 app.post("/posts",(req,res)=>{
     let details = req.body;
@@ -54,6 +41,20 @@ app.get("/posts/editpost/:id",(req,res)=>{
     let {id} = req.params;
     let post = posts.find((a)=>a.id === id);
     res.render("editpost",{post});
+})
+
+app.patch("/posts/editpost/:id",(req,res)=>{
+    let {id} = req.params;
+    let {username, description} = req.body;
+    let post = posts.find((a)=>a.id === id);
+    if(!id || !post){
+        res.render("error");
+        return;
+    }
+    post.username = username;
+    post.description = description;
+    post.id = id;
+    res.redirect(`/posts/show/${id}`);
 })
 
 app.get("/posts/show/:id",(req,res)=>{
